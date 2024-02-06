@@ -9,6 +9,8 @@ function App() {
    const [videos, setVideos] = useState([]);
    const getVideos = async () => {
     console.log(import.meta.env.VITE_API);
+    console.log(process.env.VITE_API);
+
       const res = await fetch(
          `${conf.api}/video/random`
       );
