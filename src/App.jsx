@@ -8,7 +8,7 @@ function App() {
    const [videos, setVideos] = useState([]);
    const getVideos = async () => {
       const res = await fetch(
-         "https://youtube-r5sb.onrender.com/api/video/random"
+         "/api/video/random"
       );
       const data = await res.json();
       console.log(data.data);
