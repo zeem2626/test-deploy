@@ -10,21 +10,21 @@ export default defineConfig(({ mode }) => {
       //   rollupOptions: {
       //   },
       //   chunkSizeWarningLimit: 600,
-      // },
-      server: {
-        //  proxy: {
-        //     // "/api": env.VITE_PROXY,
-        //     "/api": "https://youtube-r5sb.onrender.com",
-        //  },
+      // // },
+      // server: {
+      //   //  proxy: {
+      //   //     // "/api": env.VITE_PROXY,
+      //   //     "/api": "https://youtube-r5sb.onrender.com",
+      //   //  },
         
-        proxy: {
-          "/api": {
-            target: "https://youtube-r5sb.onrender.com",
-               changeOrigin: true,
-              //  rewrite: (path) => path.replace(/^\/api/, ""),
-            },
-         },
-      },
+      //   proxy: {
+      //     "/api": {
+      //       target: "https://youtube-r5sb.onrender.com",
+      //          changeOrigin: true,
+      //         //  rewrite: (path) => path.replace(/^\/api/, ""),
+      //       },
+      //    },
+      // },
 
       plugins: [react()],
    };
