@@ -12,18 +12,18 @@ export default defineConfig(({ mode }) => {
       //   chunkSizeWarningLimit: 600,
       // },
       server: {
-         proxy: {
-            // "/api": env.VITE_PROXY,
-            "/api": "https://youtube-r5sb.onrender.com",
-         },
-        
-        // proxy: {
-        //   "/api": {
-        //     // target: env.VITE_PROXY,
-        //        changeOrigin: true,
-        //       //  rewrite: (path) => path.replace(/^\/api/, ""),
-        //     },
+        //  proxy: {
+        //     // "/api": env.VITE_PROXY,
+        //     "/api": "https://youtube-r5sb.onrender.com",
         //  },
+        
+        proxy: {
+          "/api": {
+            target: "https://youtube-r5sb.onrender.com",
+               changeOrigin: true,
+              //  rewrite: (path) => path.replace(/^\/api/, ""),
+            },
+         },
       },
 
       plugins: [react()],

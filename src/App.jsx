@@ -38,7 +38,7 @@ function App() {
             </button>
          </div>
          <div>
-          {videos.map((elem)=> <h2>{elem.title}</h2>)}
+          {videos.map((elem, index)=> <h2 key={index}>{elem.title}</h2>)}
          </div>
       </>
    );
