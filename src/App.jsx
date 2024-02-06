@@ -2,13 +2,15 @@ import { useEffect, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
+import conf from "./conf";
 
 function App() {
    const [count, setCount] = useState(0);
    const [videos, setVideos] = useState([]);
    const getVideos = async () => {
+    console.log(import.meta.env.VITE_API);
       const res = await fetch(
-         "https://youtube-r5sb.onrender.com/api/video/random"
+         `${conf.api}/video/random`
       );
       const data = await res.json();
       console.log(data.data);
