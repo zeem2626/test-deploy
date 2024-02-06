@@ -5,28 +5,11 @@ export default defineConfig(({ mode }) => {
    const env = loadEnv(mode, process.cwd(), "");
 
    return {
-      // build: {
-      //   manifest: true,
-      //   rollupOptions: {
-      //   },
-      //   chunkSizeWarningLimit: 600,
-      // // },
-      build: {
-         rollupOptions: {
-            define: {},
-         },
-      },
       server: {
-         //  proxy: {
-         //     // "/api": env.VITE_PROXY,
-         //     "/api": "https://youtube-r5sb.onrender.com",
-         //  },
-
          proxy: {
             "/api": {
                target: env.VITE_API,
                changeOrigin: true,
-               //  rewrite: (path) => path.replace(/^\/api/, ""),
             },
          },
       },

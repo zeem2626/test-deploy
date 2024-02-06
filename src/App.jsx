@@ -8,20 +8,7 @@ function App() {
    const [count, setCount] = useState(0);
    const [videos, setVideos] = useState([]);
    const getVideos = async () => {
-    // console.log("meta.env");
-    // console.log(import.meta.env.VITE_API);
-    // console.log("process.env");
-    // const serverUrl = process.env.REACT_APP_SERVER_URL;
-    // const serverUrl = /api;
-  
-    // const serverUrl = VITE_CHECK;
-    // console.log(serverUrl);
-
-      const res = await fetch(
-        //  `${process.env.REACT_APP_SERVER_URL}/video/random`
-         `/api/video/random`
-        //  `${conf.api}/video/random`
-      );
+      const res = await fetch(`${conf.api}/video/random`);
       const data = await res.json();
       console.log(data.data);
       setVideos(data.data);
@@ -46,11 +33,12 @@ function App() {
             <button onClick={() => setCount((count) => count + 1)}>
                count is {count}
             </button>
-            <button onClick={getVideos}>Get Videos
-            </button>
+            <button onClick={getVideos}>Get Videos</button>
          </div>
          <div>
-          {videos.map((elem, index)=> <h2 key={index}>{elem.title}</h2>)}
+            {videos.map((elem, index) => (
+               <h2 key={index}>{elem.title}</h2>
+            ))}
          </div>
       </>
    );
